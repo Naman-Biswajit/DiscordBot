@@ -6,6 +6,7 @@ import modules.config_gen
 # import bot modules. TODO: maybe dynamic loading?
 import modules.admin
 import modules.testing
+import modules.xkcd
 
 # connecting to APIs
 
@@ -53,6 +54,7 @@ def on_ready():
 def on_message(message):
     if discord_client.user.id != message.author.id:
         modules.testing.check(discord_client, message)
+        modules.xkcd.check(discord_client, message)
 
 
 discord_client.run()
