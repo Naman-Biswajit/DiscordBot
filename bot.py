@@ -7,6 +7,7 @@ import modules.config_gen
 import modules.admin
 import modules.testing
 import modules.xkcd
+import modules.fortune
 
 # connecting to APIs
 
@@ -55,6 +56,7 @@ def on_message(message):
     if discord_client.user.id != message.author.id:
         modules.testing.check(discord_client, message)
         modules.xkcd.check(discord_client, message)
+        modules.fortune.check(discord_client, message)
 
 
 discord_client.run()
